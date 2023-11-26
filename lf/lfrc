@@ -25,6 +25,9 @@ cmd python ${{
 	tmux kill-session -t "PythonIDE"
 	tmux new -s "PythonIDE" -d -c "$PWD" "lf"
 	tmux split-window -v -l 5% -c "$PWD" 
+	if [ -d .venv ]; then
+		tmux send "source .venv/bin/activate" Enter	
+	fi
 	tmux select-pane -t "PythonIDE:0.0" 
 	tmux -2 attach-session -d
 }}
