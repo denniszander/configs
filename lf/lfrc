@@ -17,6 +17,7 @@ map gm cd /media/data # Go to data
 
 # New mapping
 map DD delete
+map <f-5> source lfrc
 
 # Run a python enviroment (i.e. open small Python enviromnent inside tmux on lower screen)
 cmd python ${{
@@ -26,4 +27,15 @@ cmd python ${{
 	tmux split-window -v -l 5% -c "$PWD" 
 	tmux select-pane -t "PythonIDE:0.0" 
 	tmux -2 attach-session -d
+}}
+
+cmd on-cd &{{
+	# display repository status in your prompt
+	if [ -d .git ] || [ -f .git ]; then
+		branch=$(git branch --show-current 2>/dev/null) || true
+		remote=$(git config --get branch.$branch.remote 2>/dev/null) || true
+		url=$(git remote get-url $remote 2>/dev/null) || true
+		fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m [GIT BRANCH:> $branch >> $url]\033[0m"
+	fi
+	lf -remote "send $id set promptfmt \"$fmt\""
 }}
