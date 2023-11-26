@@ -75,6 +75,11 @@ inoremap <Esc> <Esc><Esc>
 let g:slime_target = "tmux"  
 let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
 
+" Config for YCM: Don't show preview window!
+" Toggle config with <ctrl-k>
+set completeopt-=preview
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " Set color
 " set background=dark
 " Below does not seem to work for Alacritty!

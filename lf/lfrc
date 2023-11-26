@@ -42,3 +42,7 @@ cmd on-cd &{{
 	fi
 	lf -remote "send $id set promptfmt \"$fmt\""
 }}
+
+map gita ${{clear; echo "Follwing files will be added: $fx"; read ENTER; clear; git add $fx}}
+map gits !{{clear; git status}}
+map gitp !{{clear; git push}}
