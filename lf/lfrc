@@ -6,11 +6,14 @@ set hidden
 set number
 set relativenumber 
 set scrolloff 10
+set sortby natural
+set reverse false
+set info size
+setlocal ~/Downloads sortby time 
+setlocal ~/Downloads info time 
 
 # Map and configure some shortcuts
 map gd cd ~/Downloads # Go to Downloads
-setlocal ~/Downloads sortby "atime"
-setlocal ~/Downloads reverse
 map gc cd ~/.config # Go to config
 map gp cd /media/data/python # Go to python projects
 map gm cd /media/data # Go to data
