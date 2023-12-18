@@ -10,6 +10,7 @@ set sortby natural
 set reverse false
 set info size
 setlocal ~/Downloads sortby time 
+setlocal ~/Downloads reverse true 
 setlocal ~/Downloads info time 
 
 # Map and configure some shortcuts
