@@ -6,6 +6,7 @@ set shiftwidth=4
 set autoindent
 set clipboard=unnamed
 set cursorcolumn 
+hi CursorColumn ctermbg=239
 set cursorline
 hi clear CursorLine
 hi link CursorLine CursorColumn
@@ -59,6 +60,8 @@ Plug 'https://github.com/pseewald/vim-anyfold'
 Plug 'https://github.com/jpalardy/vim-slime'
 " Work with csv inside vim
 Plug 'chrisbra/csv.vim'
+" Use Github Copilot
+Plug 'github/copilot.vim'
 call plug#end()
 
 " Use Lf as navigation tool
@@ -72,6 +75,9 @@ let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_
 " Execute current (python) file"
 autocmd FileType python map <F9> :w<bar>:execute 'SlimeSend1 python3' expand('%:p')<CR>
 autocmd FileType python imap <F9> <esc>:w <bar>:execute 'SlimeSend1 python3' expand('%:p')<CR>
+" Vim slime sends stop signal to tmux pane
+autocmd FileType python map <F10> :execute 'SlimeSend1' "\x03"<CR>
+autocmd FileType python imap <F10> <esc>  :execute 'SlimeSend1' "\x03"<CR>
 autocmd FileType python AnyFoldActivate
 autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
 " Run Python code in terminal (WE USE NEW LOGIC WITH slime!)
@@ -83,3 +89,9 @@ autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
 " Toggle config with <ctrl-k>
 set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Config for copilot
+imap <C-right> <Plug>(copilot-accept-word)
+imap <C-S-right> <Plug>(copilot-accept-line)
+imap <C-up> <Plug>(copilot-next)
+imap <C-down> <Plug>(copilot-previous)
