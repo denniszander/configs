@@ -1,0 +1,17 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Bash line in colors and git integration
+source /usr/lib/git-core/git-sh-prompt
+PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;31m\]$(__git_ps1 " (%s)")\[\e[0;39m\]\$\[\033[0m\] '
+
+# Standard editor
+export EDITOR="vim"
+
+# Quit lf in selected directory
+lfcd () {
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    cd "$(command lf -print-last-dir "$@")"
+}
+alias lf='lfcd'
+

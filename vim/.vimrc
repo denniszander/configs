@@ -6,7 +6,7 @@ set shiftwidth=4
 set autoindent
 set clipboard=unnamed
 set cursorcolumn 
-hi CursorColumn ctermbg=239
+hi CursorColumn ctermbg=237
 set cursorline
 hi clear CursorLine
 hi link CursorLine CursorColumn
