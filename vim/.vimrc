@@ -78,8 +78,8 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
 
 " Execute current (python) file"
-autocmd FileType python map <F9> :w<bar>:execute 'SlimeSend1 python3' expand('%:p')<CR>
-autocmd FileType python imap <F9> <esc>:w <bar>:execute 'SlimeSend1 python3' expand('%:p')<CR>
+autocmd FileType python map <F9> :w<bar>:execute 'SlimeSend1 python3' fnameescape(expand('%:p'))<CR>
+autocmd FileType python imap <F9> <esc>:w <bar>:execute 'SlimeSend1 python3' fnameescape(expand('%:p'))<CR>
 " Vim slime sends stop signal to tmux pane
 autocmd FileType python map <F10> :execute 'SlimeSend1' "\x03"<CR>
 autocmd FileType python imap <F10> <esc>  :execute 'SlimeSend1' "\x03"<CR>
