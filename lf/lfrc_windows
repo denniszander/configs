@@ -1,3 +1,8 @@
 # Some shortcuts:
 map gj cd "/mnt/c/Users/DennisSenderowski/OneDrive - Körber Supply Chain Software/Dokumente/Jira"
 map gw cd "/mnt/d/1_git_wa/wmsx"
+
+
+# Open explorer in current directory:
+map oe ${{explorer.exe .}}  
+map ot ${{wt.exe }}
