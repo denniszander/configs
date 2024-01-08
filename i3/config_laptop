@@ -1,0 +1,11 @@
+# Make sure only external monitor runs if connected
+exec toggle_monitor.sh -e
+
+# Get some applications running
+exec spotify-launcher
+# Background picture 
+exec feh --bg-scale /media/data/Wallpaper/odeceixe.jpg
+
+# Disable screen lock after 10 minutes
+exec xset s off
+exec xset -dpms

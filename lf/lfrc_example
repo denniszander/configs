@@ -1,0 +1,3 @@
+# Build your lfrc from all parts you need :)
+# Source specific config
+source ~/.config/lf/lfrc_all

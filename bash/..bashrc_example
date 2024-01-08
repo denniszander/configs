@@ -1,0 +1,5 @@
+# Source all bash files you need and rename to .bashrc ;)
+source ~/.config/bash/.bashrc_all
+
+
+

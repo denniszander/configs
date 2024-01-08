@@ -1,0 +1,5 @@
+# Get some applications running
+exec spotify
+# Load background
+exec feh --bg-scale ~/Pictures/Wallpaper/MonteClerico.jpg
+

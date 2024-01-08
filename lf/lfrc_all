@@ -13,14 +13,9 @@ setlocal ~/Downloads sortby time
 setlocal ~/Downloads reverse true 
 setlocal ~/Downloads info time 
 
-# Source specific config
-source ~/.config/lf/lfrc_windows
-
 # Map and configure some shortcuts
 map gd cd ~/Downloads # Go to Downloads
 map gc cd ~/.config # Go to config
-map gp cd /media/data/python # Go to python projects
-map gm cd /media/data # Go to data
 
 # New mapping
 map DD delete
