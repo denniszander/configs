@@ -13,6 +13,9 @@ setlocal ~/Downloads sortby time
 setlocal ~/Downloads reverse true 
 setlocal ~/Downloads info time 
 
+# Source specific config
+source ~/.config/lf/lfrc_windows
+
 # Map and configure some shortcuts
 map gd cd ~/Downloads # Go to Downloads
 map gc cd ~/.config # Go to config
@@ -21,7 +24,8 @@ map gm cd /media/data # Go to data
 
 # New mapping
 map DD delete
-map <f-5> source lfrc
+map <f-5> reload
+map <f-6> source lfrc
 
 # Run a python enviroment (i.e. open small Python enviromnent inside tmux on lower screen)
 cmd python ${{
