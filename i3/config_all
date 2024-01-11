@@ -203,23 +203,10 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 # Some custom keybindings
 # Start firefox
 bindsym $mod+b exec firefox
-# Turn off screen manually pressing 'F8'
-bindsym $mod+p exec turnoffscreen.sh
-# Shutdown PC pressing $mod+q
-bindsym $mod+q exec shutdown_check.sh	
-
-# Autostart applications
-# Make sure only external monitor runs if connected
-exec toggle_monitor.sh -e
 
 # Get some applications running
-exec spotify-launcher
 exec firefox
 exec alacritty 
 # For transparent background :)
-exec feh --bg-scale /media/data/Wallpaper/odeceixe.jpg
 exec_always --no-startup-id picom
 
-# Disable screen lock after 10 minutes
-exec xset s off
-exec xset -dpms

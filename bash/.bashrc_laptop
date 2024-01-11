@@ -1,0 +1,9 @@
+# Change brightness
+b(){
+	if (($1 ==  0))
+	then 
+		turnoffscreen.sh
+	else
+		change_brightness.sh $1
+	fi
+}

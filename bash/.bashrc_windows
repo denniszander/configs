@@ -1,0 +1,32 @@
+# Use Windows ssh keys inside WSL
+# Config for automatic ssh forwarding
+eval `keychain --agents ssh --eval ~/.ssh/id_ed25519`
+
+# Config for automatic ssh forwarding
+eval "$(ssh-agent -s)"
+. ~/alias
+
+# For scp file transfer
+# scp snippet
+scp_tut(){
+echo 'scp -i ~/.ssh/id_ed25519.pub admin-d0e06732@eu86e02-lvrdb.dm-drogeriemarkt.com:/tmp/xxx ~/xxx'
+echo 'scp -i ~/.ssh/id_ed25519.pub admin-d0e06732@eu86e02-lvrdb.dm-drogeriemarkt.com:/tmp/xxx ~/xxx' | clip.exe
+}
+
+
+# Export Java Home
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# Issues with tmux and colors
+export TERM=xterm-256color

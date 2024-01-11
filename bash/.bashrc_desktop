@@ -1,0 +1,2 @@
+# Issues with tmux and colors
+export TERM=xterm-256color
