@@ -67,6 +67,8 @@ Plug 'https://github.com/jpalardy/vim-slime'
 Plug 'chrisbra/csv.vim'
 " Use Github Copilot
 Plug 'github/copilot.vim'
+" Git integration with vim-fugitive
+Plug 'https://github.com/tpope/vim-fugitive'
 call plug#end()
 
 " Use Lf as navigation tool
