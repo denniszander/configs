@@ -22,6 +22,12 @@ map DD delete
 map <f-5> reload
 map <f-6> source lfrc
 
+# Use xdg-open as default opener
+cmd open $xdg-open "$f"
+
+# Execute file with X
+map X !bash $f
+
 # Run a python enviroment (i.e. open small Python enviromnent inside tmux on lower screen)
 cmd python ${{
 	# Create a new session named "PythonIDE", split panes and change directory in each
