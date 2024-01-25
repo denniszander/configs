@@ -1,3 +1,19 @@
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[font.normal]
+family = "UbuntuMonoNerdFont"
+style = "Regular"
+
+[window]
+opacity = 0.97
+
+[selection]
+save_to_clipboard = true
+
+# All below is colors 
+
 [[colors.indexed_colors]]
 color = "#458588"
 index = 66
@@ -150,13 +166,3 @@ foreground = "#ebdbb2"
 background = "CellForeground"
 text = "CellBackground"
 
-[colors.vi_mode_cursor]
-cursor = "CellForeground"
-text = "CellBackground"
-
-[font.normal]
-family = "UbuntuMonoNerdFont"
-style = "Regular"
-
-[window]
-opacity = 0.97

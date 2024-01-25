@@ -18,3 +18,6 @@ lfcd () {
 }
 alias lf='lfcd'
 
+# Copy pwd t system clipboard
+alias cpwd='pwd | xclip -selection clipboard'
+
