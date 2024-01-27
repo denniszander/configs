@@ -1,3 +1,6 @@
 # Map and configure some shortcuts
 map gp cd /media/data/python # Go to python projects
 map gm cd /media/data # Go to data
+
+
+
