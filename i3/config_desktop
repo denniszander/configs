@@ -2,4 +2,6 @@
 exec spotify
 # Load background
 exec feh --bg-scale ~/Pictures/Wallpaper/MonteClerico.jpg
+# Set hdmi as default audio device
+exec pactl set-default-sink alsa_output.pci-0000_0c_00.1.hdmi-stereo-extra1
 

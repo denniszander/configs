@@ -210,3 +210,6 @@ exec alacritty
 # For transparent background :)
 exec_always --no-startup-id picom
 
+# Disable screen lock after 10 minutes
+exec xset s off
+exec xset -dpms
