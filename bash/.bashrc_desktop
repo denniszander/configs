@@ -1,6 +1,3 @@
 # Issues with tmux and colors
 export TERM=xterm-256color
 
-# Standard editor
-export EDITOR="nvim"
-alias vim="nvim"
