@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the directories you want to run git pull in
-directories=(~/repos ~/.config)
+directories=(~/.config)
 
 # Loop through the directories and run git pull in each one
 for dir in "${directories[@]}"

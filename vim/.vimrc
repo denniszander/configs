@@ -20,14 +20,6 @@ au BufWinEnter * silent loadview
 filetype plugin on
 syntax on
 
-" Autocomplete brackts (no plugin!)
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 
 " Change tab with ctrl left/right 
 nnoremap <C-Left> :tabprevious<CR>
@@ -65,10 +57,10 @@ Plug 'https://github.com/pseewald/vim-anyfold'
 Plug 'https://github.com/jpalardy/vim-slime'
 " Work with csv inside vim
 Plug 'chrisbra/csv.vim'
-" Use Github Copilot
-Plug 'github/copilot.vim'
 " Git integration with vim-fugitive
 Plug 'https://github.com/tpope/vim-fugitive'
+" Codium (code completion)
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 call plug#end()
 
 " Use Lf as navigation tool
@@ -97,8 +89,3 @@ autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
 set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-" Config for copilot
-imap <C-right> <Plug>(copilot-accept-word)
-imap <C-S-right> <Plug>(copilot-accept-line)
-imap <C-up> <Plug>(copilot-next)
-imap <C-down> <Plug>(copilot-previous)
