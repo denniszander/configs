@@ -5,4 +5,5 @@ exec toggle_monitor.sh -e
 exec spotify-launcher
 # Background picture 
 exec feh --bg-scale /media/data/Wallpaper/odeceixe.jpg
-
+# Change permission on backlight
+sudo chmod 666 /sys/class/backlight/intel_backlight/brightness
