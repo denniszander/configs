@@ -89,3 +89,12 @@ cmd fzf_jump ${{
     fi
 }}
 map <c-f> :fzf_jump
+
+# Unzip into new directory
+cmd unzip !{{
+	dir_path="${f%.*}"
+	dir="${dir_path##*/}"
+	mkdir $dir
+	unzip $f -d $dir
+}}
+map <c-u> :unzip

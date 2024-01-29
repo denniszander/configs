@@ -11,7 +11,6 @@ set cursorline
 hi clear CursorLine
 hi link CursorLine CursorColumn
 
-
 " Saves and loads folds in ~/.vim/views
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
@@ -19,7 +18,6 @@ au BufWinEnter * silent loadview
 " For syntax highlighting 
 filetype plugin on
 syntax on
-
 
 " Change tab with ctrl left/right 
 nnoremap <C-Left> :tabprevious<CR>
@@ -79,9 +77,6 @@ autocmd FileType python map <F10> :execute 'SlimeSend1' "\x03"<CR>
 autocmd FileType python imap <F10> <esc>  :execute 'SlimeSend1' "\x03"<CR>
 autocmd FileType python AnyFoldActivate
 autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
-" Run Python code in terminal (WE USE NEW LOGIC WITH slime!)
-" autocmd FileType python map <buffer> <F9> <esc>:w<CR>:ter ++rows=10 python3 %:p<CR>
-" autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:ter ++rows=10 python3 %:p<CR>
 
 
 " Config for YCM: Don't show preview window!
