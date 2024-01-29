@@ -22,6 +22,9 @@ map DD delete
 map <f-5> reload
 map <f-6> source lfrc
 
+# Put current file into clipboard
+map acopy ${{cat "$f" | xclip -selection clipboard}}
+
 # Use xdg-open as default opener
 cmd open $xdg-open "$f"
 
@@ -64,7 +67,7 @@ map gitc ${{clear; git commit}}
 # Install fzf and ripgrep
 # Grep all files in current directory
 cmd fzf_search ${{
-    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --hidden"
     res="$(
         FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
             fzf --bind "change:reload:$RG_PREFIX {q} || true" \
