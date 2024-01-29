@@ -22,6 +22,9 @@ map DD delete
 map <f-5> reload
 map <f-6> source lfrc
 
+# Put current file into clipboard
+map acopy ${{cat "$f" | xclip -selection clipboard}}
+
 # Use xdg-open as default opener
 cmd open $xdg-open "$f"
 
