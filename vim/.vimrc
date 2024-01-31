@@ -84,3 +84,7 @@ autocmd FileType python nnoremap K :YcmCompleter GetDoc <CR>
 set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" Config for codeium
+imap <C-Right>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <C-Left>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+
