@@ -34,6 +34,9 @@ vmap <C-x> x
 imap <C-v> <esc>P
 imap <C-s> <esc>:w<CR>
 
+" Search in visual mode (https://vim.fandom.com/wiki/Search_for_visually_selected_text)
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 " Plugin loader (automatic download of Plug!)
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
