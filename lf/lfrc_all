@@ -70,7 +70,7 @@ map gitc ${{clear; git commit}}
 # Install fzf and ripgrep
 # Grep all files in current directory
 cmd fzf_search ${{
-    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --hidden"
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --ignore-case --hidden"
     res="$(
         FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
             fzf --bind "change:reload:$RG_PREFIX {q} || true" \
