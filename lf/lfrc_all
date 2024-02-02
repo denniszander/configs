@@ -65,6 +65,7 @@ map gita ${{clear; echo "Follwing files will be added: $fx"; read ENTER; clear; 
 map gits !{{clear; git status}}
 map gitp !{{clear; git push}}
 map gitc ${{clear; git commit}}
+map gitk !{{clear; gitk $f}}
 
 # For search of files inside lf
 # Install fzf and ripgrep

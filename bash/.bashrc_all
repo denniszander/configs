@@ -21,3 +21,8 @@ alias lf='lfcd'
 # Copy pwd t system clipboard
 alias cpwd='pwd | xclip -selection clipboard'
 
+# Git aliases
+alias gitm='git checkout master'
+alias gits='git status'
+alias gitp='git pull'
+alias gitc='git commit'
