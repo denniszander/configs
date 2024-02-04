@@ -1,6 +1,9 @@
 # Connect to rasPi
 alias raspi="ssh 192.168.0.29"
 
+# ncspot as tmux session
+alias ncspot="tmux new -s ncspot ncspot"
+
 # Change brightness
 b(){
 	if (($1 ==  0))

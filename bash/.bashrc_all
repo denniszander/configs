@@ -1,12 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Run tmux as default termial
-# https://unix.stackexchange.com/questions/43601/how-can-i-set-my-default-shell-to-start-up-tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-	  exec tmux
-fi
-
 # Bash line in colors and git integration
 source /usr/lib/git-core/git-sh-prompt
 PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;31m\]$(__git_ps1 " (%s)")\[\e[0;39m\]\$\[\033[0m\] '
@@ -16,6 +10,13 @@ export EDITOR="vim"
 
 # Standard opener
 export OPENER="xdg-open"
+
+# Use zoxide
+eval "$(zoxide init bash)"
+alias cd="z"
+
+# Session switcher for tmux
+alias t="~/.config/tmux/plugins/tmux-fzf-session/tmux-switch-pane.sh"
 
 # Quit lf in selected directory
 lfcd () {

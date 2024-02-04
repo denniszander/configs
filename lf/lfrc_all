@@ -105,3 +105,28 @@ cmd unzip !{{
 	unzip $f -d $dir
 }}
 map <c-u> :unzip
+
+# Open new tmux session in selected directory
+cmd tmux_session ${{
+	dir="${PWD##*/}"
+	# If tmux session already exists, attach to it
+	if tmux has-session -t $dir 2>/dev/null; then
+		tmux attach -t $dir
+	else
+		tmux new -s $dir
+	fi
+}}
+map <c-t> :tmux_session
+map <c-s> ${{~/.config/tmux/plugins/tmux-fzf-session/tmux-switch-pane.sh}}
+
+# zoxide integration
+cmd z %{{
+	result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd zi ${{
+	result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+map gz zi
