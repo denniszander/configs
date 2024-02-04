@@ -2,7 +2,7 @@
 exec toggle_monitor.sh -e
 
 # Get some applications running
-exec spotify-launcher
+exec alacritty -e ncspot
 # Background picture 
 exec feh --bg-scale /media/data/Wallpaper/odeceixe.jpg
 # Change permission on backlight
