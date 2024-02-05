@@ -109,6 +109,8 @@ map <c-u> :unzip
 # Open new tmux session in selected directory
 cmd tmux_session ${{
 	dir="${PWD##*/}"
+	dir=$(tr -dc [:alnum:] <<< "$dir")
+	echo $dir
 	# If tmux session already exists, attach to it
 	if tmux has-session -t $dir 2>/dev/null; then
 		tmux attach -t $dir
