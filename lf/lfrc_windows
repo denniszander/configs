@@ -6,3 +6,7 @@ map gr cd "~/repos/wmsx"
 # Open explorer in current directory:
 map oe ${{explorer.exe .}}  
 map ot ${{wt.exe }}
+
+# Mount eu86 to filesystem
+map aeu86 ${{sshfs eu86e02-lvrdb@eu86e02-lvrdb.dm-drogeriemarkt.com:/srv/data01/eu86/e02/ ~/eu86}}
+map akeu86 !{{pkill sshfs}}
