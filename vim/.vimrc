@@ -26,6 +26,9 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-k> :tabnext<CR>
 
 " Copy and paste commands
+" Copy in system clipboard from vim#
+vnoremap y "+y
+vnoremap yy "+yy
 " CTRL-C to copy (visual mode)
 vmap <C-c> y
 " CTRL-X to cut (visual mode)
