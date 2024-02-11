@@ -65,6 +65,8 @@ Plug 'chrisbra/csv.vim'
 Plug 'https://github.com/tpope/vim-fugitive'
 " Codium (code completion)
 Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+" Status bar for vim
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Use Lf as navigation tool
