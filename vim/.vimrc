@@ -36,9 +36,14 @@ vmap <C-x> x
 " CTRL-V to paste (insert mode)
 imap <C-v> <esc>P
 imap <C-s> <esc>:w<CR>
+" CTRL-b to go to Visual Block Mode
+nnoremap <C-b> <C-v>
 
 " Search in visual mode (https://vim.fandom.com/wiki/Search_for_visually_selected_text)
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" XML formatting
+map <C-f> :%!xmllint --format %<CR>
 
 " Plugin loader (automatic download of Plug!)
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
