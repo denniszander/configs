@@ -66,6 +66,7 @@ map gits !{{clear; git status}}
 map gitp !{{clear; git push}}
 map gitc ${{clear; git commit}}
 map gitk !{{clear; gitk $f}}
+map al ${{clear; lazygit}}
 
 # For search of files inside lf
 # Install fzf and ripgrep
