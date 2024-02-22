@@ -25,6 +25,9 @@ map <f-6> source lfrc
 # Put current file into clipboard
 map acopy ${{cat "$f" | xclip -selection clipboard}}
 
+# Put current path into clipboard
+map ap ${{echo "$f" | xclip -selection clipboard}}
+
 # Make directory and go to it
 map amd push %mkdir<space>
 

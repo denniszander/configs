@@ -43,7 +43,7 @@ nnoremap <C-b> <C-v>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " XML formatting
-map <C-f> :%!xmllint --format %<CR>
+map <C-f> :w<bar>:%!xmllint --format %<CR>
 
 " Plugin loader (automatic download of Plug!)
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -69,7 +69,7 @@ Plug 'chrisbra/csv.vim'
 " Git integration with vim-fugitive
 Plug 'https://github.com/tpope/vim-fugitive'
 " Codium (code completion)
-Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+" Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 " Status bar for vim
 Plug 'vim-airline/vim-airline'
 call plug#end()
@@ -98,6 +98,6 @@ set completeopt-=preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Config for codeium
-imap <C-Right>   <Cmd>call codeium#CycleCompletions(1)<CR>
-imap <C-Left>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+" imap <C-Right>   <Cmd>call codeium#CycleCompletions(1)<CR>
+" imap <C-Left>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 

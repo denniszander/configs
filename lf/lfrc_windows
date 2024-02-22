@@ -1,5 +1,6 @@
 # Some shortcuts:
-map gj cd "/mnt/c/Users/DennisSenderowski/OneDrive - Körber Supply Chain Software/Dokumente/Jira"
+# map gj cd "/mnt/c/Users/DennisSenderowski/OneDrive - Körber Supply Chain Software/Dokumente/Jira"
+map gj cd "~/Documents/Jira"
 map gw cd "/mnt/d/1_git_wa/wmsx"
 map gr cd "~/repos/wmsx"
 
