@@ -1,8 +1,11 @@
 " Basic config for better optic
 set number
 set relativenumber
-set tabstop=4
-set shiftwidth=4
+" This changes 'tab' to 4 spaces 
+set shiftwidth=4 smarttab
+set expandtab
+" This shows 'tab' as 7 spaces
+set tabstop=7 softtabstop=0
 set autoindent
 set clipboard=unnamed
 set cursorcolumn 
