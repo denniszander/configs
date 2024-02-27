@@ -28,6 +28,9 @@ alias lf='lfcd'
 # Copy pwd t system clipboard
 alias cpwd='pwd | xclip -selection clipboard'
 
+# Keep bash history synced
+export PROMPT_COMMAND="history -a; history -n"
+
 # Git aliases
 alias gitm='git checkout master'
 alias gits='git status'

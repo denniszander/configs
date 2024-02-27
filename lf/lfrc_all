@@ -21,6 +21,7 @@ map gc cd ~/.config # Go to config
 map DD delete
 map <f-5> reload
 map <f-6> source lfrc
+map <esc> quit
 
 # Put current file into clipboard
 map acopy ${{cat "$f" | xclip -selection clipboard}}
@@ -30,6 +31,9 @@ map ap ${{echo "$f" | xclip -selection clipboard}}
 
 # Make directory and go to it
 map amd push %mkdir<space>
+
+# Open tmux session fzf
+map at ${{~/.config/tmux/plugins/tmux-fzf-session/tmux-switch-pane.sh}}
 
 # Use xdg-open as default opener
 cmd open $xdg-open "$f"

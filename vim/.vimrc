@@ -39,6 +39,7 @@ vmap <C-x> x
 " CTRL-V to paste (insert mode)
 imap <C-v> <esc>P
 imap <C-s> <esc>:w<CR>
+map <C-s> :w<CR>
 " CTRL-b to go to Visual Block Mode
 nnoremap <C-b> <C-v>
 

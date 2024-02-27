@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Define the base path
+base_path="/wmsx"
+new_base_path="/mnt/d/1_git_wa/wmsx"
+
+# Get the current working directory
+current_path=$(pwd)
+
+# Check if the current path is in the base path or its subdirectory
+if [[ $current_path == *wmsx* ]]; then
+    # Extract the subdirectory path
+    sub_path=${current_path#*wmsx}
+
+    # Construct the new path
+    new_path=$new_base_path$sub_path
+	new_windows_path=$(wslpath -w $new_path)
+	# Initialize a variable to track if a flag was provided
+    flag_provided=false
+
+  # Check the flags
+    while getopts 'te' flag; do
+        case "${flag}" in
+            t) wt.exe -d $new_windows_path; flag_provided=true ;;
+            e) explorer.exe $new_windows_path; flag_provided=true ;;
+            *) echo "Invalid flag. Use -t to cd into the new directory, -e to echo the new directory." ;;
+        esac
+    done
+
+    # If no flag was provided open explorer
+	if ! $flag_provided; then
+		explorer.exe $new_windows_path;
+	fi
+
+else
+    echo "You are not in the path $base_path or its subdirectory."
+fi
+
+
