@@ -1,9 +1,6 @@
 # Connect to rasPi
 alias raspi="ssh 192.168.0.29"
 
-# ncspot as tmux session
-alias ncspot="tmux new -s ncspot ncspot"
-
 # Use nvim instead of vim
 export EDITOR="nvim"
 

@@ -32,6 +32,9 @@ map ap ${{echo "$f" | xclip -selection clipboard}}
 # Make directory and go to it
 map amd push %mkdir<space>
 
+# Open tmux session fzf
+map at ${{~/.config/tmux/plugins/tmux-fzf-session/tmux-switch-pane.sh}}
+
 # Use xdg-open as default opener
 cmd open $xdg-open "$f"
 
