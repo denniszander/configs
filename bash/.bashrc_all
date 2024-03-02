@@ -15,6 +15,9 @@ export OPENER="xdg-open"
 eval "$(zoxide init bash)"
 alias cd="z"
 
+# Capture current pane with Editor
+alias cap="capture-pane"
+
 # Session switcher for tmux
 alias t="~/.config/tmux/plugins/tmux-fzf-session/tmux-switch-pane.sh"
 

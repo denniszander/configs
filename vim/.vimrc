@@ -7,7 +7,7 @@ set expandtab
 " This shows 'tab' as 7 spaces
 set tabstop=7 softtabstop=0
 set autoindent
-set clipboard=unnamed
+set clipboard=unnamedplus
 set cursorcolumn 
 hi CursorColumn ctermbg=237
 set cursorline
@@ -17,6 +17,10 @@ hi link CursorLine CursorColumn
 " Saves and loads folds in ~/.vim/views
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
+
+" AutoSave 
+" https://stackoverflow.com/questions/17365324/auto-save-in-vim-as-you-type
+autocmd TextChanged,TextChangedI <buffer> silent write
 
 " For syntax highlighting 
 filetype plugin on
@@ -79,7 +83,6 @@ Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Use Lf as navigation tool
-map <C-o> :Lf<CR>
 map <C-t> :LfNewTab<CR>
 
 " Config for vim slime

@@ -1,0 +1,13 @@
+#!/bin/bash
+# https://dev.to/acro5piano/edit-tmux-output-with-editor-i1c
+
+# Write into temp file
+file=`mktemp`.sh
+tmux capture-pane -pS - > $file
+
+# Remove empty lines
+sed -i '/^$/d' $file
+
+# Open new tmux window, jump to last row, jump to "out" 
+tmux new-window -n:capture-pane "$EDITOR '+ normal G f$ l' $file"
+

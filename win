@@ -22,6 +22,7 @@ if [[ $current_path == *wmsx* ]]; then
     while getopts 'te' flag; do
         case "${flag}" in
             t) wt.exe -d $new_windows_path; flag_provided=true ;;
+            b) explorer.exe $new_windows_path;wt.exe -d $new_windows_path; flag_provided=true ;;
             e) explorer.exe $new_windows_path; flag_provided=true ;;
             *) echo "Invalid flag. Use -t to cd into the new directory, -e to echo the new directory." ;;
         esac
