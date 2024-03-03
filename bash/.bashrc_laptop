@@ -4,6 +4,9 @@ alias raspi="ssh 192.168.0.29"
 # Use nvim instead of vim
 export EDITOR="nvim"
 
+# Add local/bin to Path
+export PATH="~/.local/bin:"$PATH
+
 # Change brightness
 b(){
 	if (($1 ==  0))
