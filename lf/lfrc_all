@@ -116,7 +116,7 @@ map <c-u> :unzip
 
 # Open new tmux session in selected directory
 cmd tmux_session ${{
-  cd $f
+  	cd $f
 	dir="${f##*/}"
 	dir=$(tr -dc [:alnum:] <<< "$dir") # Remove special characters
 	echo $dir
@@ -125,12 +125,12 @@ cmd tmux_session ${{
 		tmux attach -t $dir
 	else
 		tmux new -d -s $dir 
-    tmux new-window -n Notes -t $dir: "$EDITOR readme.md"
+    	tmux new-window -n Notes -t $dir: "$EDITOR readme.md"
+    fi
     if [[ -z "$TMUX" ]]; then
       tmux attach -t "$dir"
     else
       tmux switch-client -t "$dir"
-    fi
 	fi
 }}
 map <c-t> :tmux_session
