@@ -136,6 +136,29 @@ cmd tmux_session ${{
 map <c-t> :tmux_session
 map <c-s> ${{~/.config/tmux/plugins/tmux-fzf-session/tmux-switch-pane.sh}}
 
+# Send directories to other pane
+cmd tmux_dir ${{
+	# Define the base path
+	base_path=".config/test"
+	new_base_path="~/hihi"
+
+	# Get the current working directory
+	current_path=$(pwd)
+
+	# Check if the current path is in the base path or its subdirectory
+	if [[ $current_path == *$base_path* ]]; then
+	    # Extract the subdirectory path
+	    sub_path=${current_path#*$base_path}
+
+	    # Construct the new path command
+	    new_path_cmd="cd "$new_base_path$sub_path
+	else
+	    new_path_cmd="echo Not in base path"
+	
+	fi
+	tmux send -t'{last}' "$new_path_cmd" enter
+}}
+map <c-j> :tmux_dir
 # zoxide integration
 cmd z %{{
 	result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
