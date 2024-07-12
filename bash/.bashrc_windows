@@ -7,13 +7,19 @@ eval "$(ssh-agent -s)"
 . ~/alias
 
 # Use firefox from cli
-# alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
+alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 
 # For scp file transfer
 # scp snippet
-scp_tut(){
-echo 'scp -i ~/.ssh/id_ed25519.pub eu86e02-lvrdb@eu86e02-lvrdb.dm-drogeriemarkt.com:/srv/data01/eu86/e02/work/projdisk/lveu86e2/ .'
-echo 'scp -i ~/.ssh/id_ed25519.pub eu86e02-lvrdb@eu86e02-lvrdb.dm-drogeriemarkt.com:/srv/data01/eu86/e02/work/projdisk/lveu86e2/ .' | clip.exe
+scp86(){
+scp -i ~/.ssh/id_ed25519.pub eu86e02-lvrdb@eu86e02-lvrdb.dm-drogeriemarkt.com:/srv/data01/eu86/e02/work/projdisk/lveu86e2/$1 .
+}
+scpAll(){
+	if [[ -z $1 ]]; then
+		echo 'Please provide a file name (which should be located at /tmp/...) and a environment name (e.g. eu86e02)'
+	else
+		scp -i ~/.ssh/id_ed25519.pub admin-D0E06732@$2-lvrdb.dm-drogeriemarkt.com:/tmp/$1 .
+	fi
 }
 
 # Export Java Home
@@ -33,3 +39,6 @@ fi
 
 # Issues with tmux and colors
 export TERM=xterm-256color
+
+# Link to main repo
+export CCM="$HOME/repos/wmsx"

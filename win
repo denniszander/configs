@@ -19,7 +19,7 @@ if [[ $current_path == *wmsx* ]]; then
     flag_provided=false
 
   # Check the flags
-    while getopts 'te' flag; do
+    while getopts 'bet' flag; do
         case "${flag}" in
             t) wt.exe -d $new_windows_path; flag_provided=true ;;
             b) explorer.exe $new_windows_path;wt.exe -d $new_windows_path; flag_provided=true ;;

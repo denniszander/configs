@@ -1,0 +1,145 @@
+k9s:
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  headless: false
+  logoless: false
+  crumbsless: false
+  readOnly: false
+  noExitOnCtrlC: false
+  noIcons: false
+  skipLatestRevCheck: false
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: 300
+    fullScreenLogs: false
+    textWrap: false
+    showTime: false
+  currentContext: logbe-ka-nonprod
+  currentCluster: 172.22.8.6
+  clusters:
+    172.18.34.7:
+      namespace:
+        active: lvs-weilerswist-dev
+        lockFavorites: false
+        favorites:
+        - lvs-weilerswist-dev
+        - default
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
+    172.18.34.11:
+      namespace:
+        active: lvs-weilerswist-prod
+        lockFavorites: false
+        favorites:
+        - lvs-weilerswist-prod
+        - default
+      view:
+        active: po
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
+    172.21.236.7:
+      namespace:
+        active: elvis-enns-stage
+        lockFavorites: false
+        favorites:
+        - elvis-enns-stage
+        - lvs-enns-stage
+        - lvs-enns-dev
+        - default
+      view:
+        active: pf
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
+    172.22.8.6:
+      namespace:
+        active: lvs-europa86-dev
+        lockFavorites: false
+        favorites:
+        - lvs-europa93-dev
+        - lvs-europa02-dev
+        - default
+        - lvs-europa86-dev
+        - lvs-europa04-stage
+        - lvs-europa01-stage
+        - lvs-europa88-dev
+        - lvs-europa99e2-dev
+        - lvs-europa02-stage
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
+    172.22.8.8:
+      namespace:
+        active: lvs-europa03-prod
+        lockFavorites: false
+        favorites:
+        - lvs-europa03-prod
+        - lvs-europa04-prod
+        - lvs-europa01-prod
+        - default
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /tmp/k9s-screens-dennis

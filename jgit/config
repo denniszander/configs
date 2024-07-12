@@ -1,0 +1,24 @@
+[filesystem "Private Build|17.0.9|/dev/sdc"]
+	timestampResolution = 2641 nanoseconds
+	minRacyThreshold = 15510 microseconds
+[filesystem "Private Build|17.0.9|drvfs"]
+	timestampResolution = 565 milliseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Eclipse Adoptium|17.0.10|/dev/sdc"]
+	timestampResolution = 2753 nanoseconds
+	minRacyThreshold = 12206 microseconds
+[filesystem "Eclipse Adoptium|17.0.8.1|/dev/sdc"]
+	timestampResolution = 6567 nanoseconds
+	minRacyThreshold = 13476 microseconds
+[filesystem "Eclipse Adoptium|17.0.9|/dev/sdc"]
+	timestampResolution = 4255 nanoseconds
+	minRacyThreshold = 13748 microseconds
+[filesystem "Private Build|17.0.10|/dev/sdc"]
+	timestampResolution = 6663 nanoseconds
+	minRacyThreshold = 22943 microseconds
+[filesystem "Ubuntu|17.0.11|/dev/sdc"]
+	timestampResolution = 2773 nanoseconds
+	minRacyThreshold = 18829 microseconds
+[filesystem "Ubuntu|17.0.11|D:\\"]
+	timestampResolution = 504 milliseconds
+	minRacyThreshold = 0 nanoseconds

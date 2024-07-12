@@ -124,7 +124,7 @@ cmd tmux_session ${{
 	if tmux has-session -t $dir 2>/dev/null; then
 		tmux attach -t $dir
 	else
-		tmux new -d -s $dir 
+		tmux new -d -s $dir -e CCM=$PWD
     	tmux new-window -n Notes -t $dir: "$EDITOR readme.md"
     fi
     if [[ -z "$TMUX" ]]; then
@@ -139,8 +139,8 @@ map <c-s> ${{~/.config/tmux/plugins/tmux-fzf-session/tmux-switch-pane.sh}}
 # Send directories to other pane
 cmd tmux_dir ${{
 	# Define the base path
-	base_path=".config/test"
-	new_base_path="~/hihi"
+	base_path="wmsx"
+	new_base_path="\$CCM"
 
 	# Get the current working directory
 	current_path=$(pwd)
